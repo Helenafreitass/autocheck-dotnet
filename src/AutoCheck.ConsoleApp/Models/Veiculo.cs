@@ -5,18 +5,20 @@ namespace AutoCheck.ConsoleApp.Models
     // Classe base de todos os veiculos (Carro, Moto, Caminhao herdam dela)
     public class Veiculo
     {
-        public string Marca { get; set; }
+               public string Marca { get; set; }
         public string Modelo { get; set; }
         public int Ano { get; set; }
         public double Quilometragem { get; set; }
+        public string Placa { get; set; }
         public List<ItemVistoria> VistoriaRealizada { get; set; }
 
-        public Veiculo(string marca, string modelo, int ano, double quilometragem)
+        public Veiculo(string marca, string modelo, int ano, double quilometragem, string placa)
         {
             this.Marca = marca;
             this.Modelo = modelo;
             this.Ano = ano;
             this.Quilometragem = quilometragem;
+            this.Placa = placa;
             this.VistoriaRealizada = new List<ItemVistoria>();
         }
 
