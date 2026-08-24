@@ -70,12 +70,40 @@ namespace AutoCheck.ConsoleApp
             Console.Write("Placa: ");
             string placa = Console.ReadLine();
 
-            Console.Write("Ano: ");
-            int ano = Convert.ToInt32(Console.ReadLine());
+                        int ano = 0;
+            bool anoValido = false;
+            while (anoValido == false)
+            {
+                Console.Write("Ano: ");
+                ano = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Quilometragem: ");
-            double km = Convert.ToDouble(Console.ReadLine());
+                // nao aceito ano futuro nem ano muito antigo, so pra evitar besteira de digitacao
+                if (ano >= 1950 && ano <= 2026)
+                {
+                    anoValido = true;
+                }
+                else
+                {
+                    Console.WriteLine("  Ano inválido, digite um ano entre 1950 e 2026.");
+                }
+            }
 
+            double km = 0;
+            bool kmValida = false;
+            while (kmValida == false)
+            {
+                Console.Write("Quilometragem: ");
+                km = Convert.ToDouble(Console.ReadLine());
+
+                if (km >= 0)
+                {
+                    kmValida = true;
+                }
+                else
+                {
+                    Console.WriteLine("  Quilometragem não pode ser negativa.");
+                }
+            }
             Veiculo veiculo = null;
 
             if (tipo == "1")
