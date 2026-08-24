@@ -6,8 +6,8 @@ namespace AutoCheck.ConsoleApp.Models
     {
         public int QuantidadePortas { get; set; }
 
-        public Carro(string marca, string modelo, int ano, double quilometragem, int quantidadePortas)
-            : base(marca, modelo, ano, quilometragem)
+                public Carro(string marca, string modelo, int ano, double quilometragem, string placa, int quantidadePortas)
+            : base(marca, modelo, ano, quilometragem, placa)
         {
             this.QuantidadePortas = quantidadePortas;
         }
