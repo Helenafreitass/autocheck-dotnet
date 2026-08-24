@@ -64,8 +64,11 @@ namespace AutoCheck.ConsoleApp
             Console.Write("Marca: ");
             string marca = Console.ReadLine();
 
-            Console.Write("Modelo: ");
+                       Console.Write("Modelo: ");
             string modelo = Console.ReadLine();
+
+            Console.Write("Placa: ");
+            string placa = Console.ReadLine();
 
             Console.Write("Ano: ");
             int ano = Convert.ToInt32(Console.ReadLine());
@@ -79,13 +82,13 @@ namespace AutoCheck.ConsoleApp
             {
                 Console.Write("Quantidade de portas: ");
                 int portas = Convert.ToInt32(Console.ReadLine());
-                veiculo = new Carro(marca, modelo, ano, km, portas);
+                veiculo = new Carro(marca, modelo, ano, km, placa, portas);
             }
             else if (tipo == "2")
             {
                 Console.Write("Cilindradas: ");
                 int cilindradas = Convert.ToInt32(Console.ReadLine());
-                veiculo = new Moto(marca, modelo, ano, km, cilindradas);
+                veiculo = new Moto(marca, modelo, ano, km, placa, cilindradas);
             }
             else if (tipo == "3")
             {
@@ -93,7 +96,7 @@ namespace AutoCheck.ConsoleApp
                 int eixos = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Capacidade de carga (toneladas): ");
                 double capacidade = Convert.ToDouble(Console.ReadLine());
-                veiculo = new Caminhao(marca, modelo, ano, km, eixos, capacidade);
+                veiculo = new Caminhao(marca, modelo, ano, km, placa, eixos, capacidade);
             }
             else
             {
@@ -158,7 +161,7 @@ namespace AutoCheck.ConsoleApp
                 Console.WriteLine("-------------------------------------------------------------------");
                 Console.WriteLine("> DADOS DO VEÍCULO:");
                 Console.WriteLine("  - Tipo: " + veiculo.ObterTipoVeiculo());
-                Console.WriteLine("  - Modelo: " + veiculo.Marca + " " + veiculo.Modelo);
+                Console.WriteLine("  - Modelo: " + veiculo.Marca + " " + veiculo.Modelo + " | Placa: " + veiculo.Placa);
                 Console.WriteLine("  - Ano: " + veiculo.Ano + " | Quilometragem: " + veiculo.Quilometragem + " km");
                 Console.WriteLine("  - Atributo Específico: " + veiculo.ObterAtributoEspecifico());
 
